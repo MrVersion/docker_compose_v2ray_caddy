@@ -1,0 +1,9 @@
+{
+    storage file_system {
+       root /etc/caddy
+    }
+}
+{$YOUR_DOMAIN_COM} {
+    reverse_proxy {$VMESS_WSPATH} 127.0.0.1:10001
+    root /index /usr/src
+}
