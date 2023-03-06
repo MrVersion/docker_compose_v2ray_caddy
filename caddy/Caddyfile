@@ -1,6 +1,6 @@
 {
     storage file_system {
-       root /etc/caddy
+       root /data/caddy
     }
 }
 {$YOUR_DOMAIN_COM} {
