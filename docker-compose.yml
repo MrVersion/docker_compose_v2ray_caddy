@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 services:
   v2ray:
@@ -10,9 +10,11 @@ services:
       - ./v2ray:/etc/v2ray
     depends_on:
       - caddy
+    networks:
+      - v2ray_net
 
   caddy:
-    image: caddy:2-alpine
+    image: caddy:2.6.4-alpine
     restart: unless-stopped
     ports:
       - "80:80"
@@ -22,3 +24,9 @@ services:
       - ./www:/usr/src
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./ssl:/data/caddy/certificates
+    networks:
+      - v2ray_net
+
+networks:
+  v2ray_net:
+    external: true
