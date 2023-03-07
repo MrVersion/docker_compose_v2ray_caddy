@@ -5,7 +5,7 @@ services:
     image: teddysun/v2ray
     restart: unless-stopped
     ports:
-      - "10001:10001"
+      - 10001:10001
     volumes:
       - ./v2ray:/etc/v2ray
     depends_on:
@@ -15,8 +15,11 @@ services:
     image: caddy
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
+      - 127.0.0.1:10001:10001
+    extra_hosts:
+      - host.docker.internal:host-gateway
     volumes:
       - ./www:/usr/src
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
