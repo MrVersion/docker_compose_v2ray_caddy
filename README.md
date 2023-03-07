@@ -19,5 +19,7 @@
 }
 ```
 4.修改 Caddyfile 文件 `vim caddy/Caddyfile`，将 `$YOUR_DOMAIN_COM` 改为自己的域名 example.com
+
 5.创建网络 `docker network create v2ray_net`
+
 6.启动容器 `docker-compose up`
