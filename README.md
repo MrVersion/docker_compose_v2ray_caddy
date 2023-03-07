@@ -18,4 +18,5 @@
 	]
 }
 ```
-4.启动容器 `docker-compose up`
+4.创建网络 `docker network create v2ray_net`
+5.启动容器 `docker-compose up`
