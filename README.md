@@ -9,13 +9,13 @@
 3. 修改 V2ray 配置文件 `vim v2ray/config.json` 将 `${V2RAY_UUID}` 替换成自定义的 UUID
 ```
 "settings": {
-				"clients": [
-					{
-						"id": "${V2RAY_UUID}",
-						"level": 1,
-						"alterId": 0
-					}
-				]
-			}
+	"clients": [
+		{
+			"id": "${V2RAY_UUID}",
+			"level": 1,
+			"alterId": 0
+		}
+	]
+}
 ```
 4.启动容器 `docker-compose up`
