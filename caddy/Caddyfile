@@ -4,6 +4,6 @@
     }
 }
 {$YOUR_DOMAIN_COM} {
-    reverse_proxy {$VMESS_WSPATH} 127.0.0.1:10001
+    reverse_proxy {$VMESS_WSPATH} host.docker.internal:10001
     root /index /usr/src
 }
